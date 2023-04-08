@@ -4,6 +4,8 @@ hmin=hmax-dif;
 grosor=0.2;
 ancho_interno=3.25;
 largo_interno=4.34;
+ancho_total=ancho_interno+2*grosor;
+largo_total=largo_interno+2*grosor;
 module columna(){
     cube([grosor,grosor,hmax]);
 }
@@ -70,6 +72,13 @@ translate([0,0,hmin-grosor])
 viga_ancho();
 
 
+//techo
 
+//translate([0,ancho_total/2,hmax])
+//rotate([0,90,0])
+cylinder(largo_total,d=ancho_total,$fn=100);
+
+//cubo()
+//cylinder(
 
 
