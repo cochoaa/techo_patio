@@ -24,6 +24,17 @@ module viga_ancho(){
     cube([grosor,ancho_interno+2*grosor,grosor]);
 }
 
+module techo_malla(){
+    translate([0,ancho_total/2,hmax])
+    rotate([-90,0,-90])
+    difference (){
+        color("MediumTurquoise")
+        cylinder(largo_total,d=ancho_total,$fn=12);
+        translate([-ancho_total/2,0,-0.5])
+        cube([ancho_total,ancho_total/2,largo_total+1]);
+    }
+}
+
 color("red")
 columna();
 
@@ -71,14 +82,10 @@ color("blue")
 translate([0,0,hmin-grosor])
 viga_ancho();
 
-
-//techo
-
 //translate([0,ancho_total/2,hmax])
-//rotate([0,90,0])
-cylinder(largo_total,d=ancho_total,$fn=100);
+//rotate([-90,0,-90])
+techo_malla();
 
-//cubo()
-//cylinder(
+
 
 
